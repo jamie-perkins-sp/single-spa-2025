@@ -1,6 +1,6 @@
 # Single-spa angular demo
 
-This is a single-spa with angular demo app. It contains 3 separate apps:
+This is a single-spa with angular demo app. It contains 3 separate app shells and an angular app:
 
 - root-html-file: just an index.html file and package.json with a script to serve it
 - single-spa: app shell created with create-single-spa
@@ -17,14 +17,14 @@ All 3 ways use the angular microfrontend, so first, run the angular app:
 
 Uses a root html file taken from the [coexisting angular microfrontends](https://github.com/joeldenning/coexisting-angular-microfrontends/) repo.
 
-1. In a separaate terminal, run `cd root-html-file` then `npm start` - serves at localhost:4200
+1. In a separaate terminal, run `cd root-html-file` then `npm start`
 2. Open your browser to http://localhost:4200/
 
 ## Single-spa ❌
 
 Uses a shell created with `npx create-single-spa` _without_ layout. Currently not working.
 
-1. In a separate terminal, run `cd single-spa` then `npm start` - serves at localhost:9000
+1. In a separate terminal, run `cd single-spa` then `npm start`
 2. Open your browser to http://localhost:9000/
 
 Currently fails with:
@@ -35,7 +35,7 @@ Currently fails with:
 
 Uses a shell created with `npx create-single-spa` _opting in_to layout. Currently not working.
 
-1. In a separate terminal, run `cd single-spa-layout` then `npm start` - serves at localhost:9000
+1. In a separate terminal, run `cd single-spa-layout` then `npm start`
 2. Open your browser to http://localhost:9000/
 
 Currently fails with:
