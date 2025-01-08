@@ -10,29 +10,40 @@ import { registerApplication, start } from "single-spa";
 //   activeWhen: ["/"],
 // });
 
+/**
+ * Below are various different ways to register apps in single-spa, leaving them commented
+ * to know which ways I've tried
+ */
+
+// This way is stubbed out by the create-single-spa schematic
+// Error: application 'app1' died in status LOADING_SOURCE_CODE: undefined
 // registerApplication({
-//   name: "ng-home",
+//   name: "app1",
 //   app: () =>
 //     import(
 //       /* webpackIgnore: true */ // @ts-ignore-next
-//       "ng-home"
+//       "app1"
 //     ),
 //   activeWhen: ["/"],
 // });
 
-registerApplication({
-  name: '@app/ng-home-root',
-  app: System.import('@app/ng-home-root').then(app => {
-    console.log('app', app);
-  }),
-  activeWhen: ['/'],
-});
+// This way required me to add a script tag for SystemJS
+// Error: application 'app1' died in status LOADING_SOURCE_CODE: Unable to resolve bare specifier 'app1'
+// registerApplication({
+//   name: 'app1',
+//   app: System.import('app1').then(app => {
+//     console.log('app', app);
+//   }),
+//   activeWhen: ['/'],
+// });
 
-// registerApplication(
-//   "ng-home",
-//   () => System.import("ng-home"),
-//   (location) => location.pathname.startsWith("/")
-// );
+// Another way I found in the docs
+// Error: application 'app1' died in status LOADING_SOURCE_CODE: Unable to resolve bare specifier 'app1'
+registerApplication(
+  "app1",
+  () => System.import("app1"),
+  (location) => location.pathname.startsWith("/")
+);
 
 start({
   urlRerouteOnly: true,
