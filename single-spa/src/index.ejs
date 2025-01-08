@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Root Config</title>
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' 'unsafe-eval' https: localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.10.3/system.min.js"></script>
   <meta name="importmap-type" use-injector />
   <!-- If you wish to turn off import-map-overrides for specific environments (prod), uncomment the line below -->
   <!-- More info at https://github.com/single-spa/import-map-overrides/blob/main/docs/configuration.md#domain-list -->
@@ -31,7 +32,7 @@
     {
       "imports": {
         "@app/root-config": "//localhost:9000/app-root-config.js",
-        "ng-home": "//localhost:4300/main.js",
+        "@app/ng-home-root": "//localhost:4300/main.js"
       }
     }
   </script>
