@@ -8,6 +8,10 @@ const routes: Routes = [
     path: 'lazy',
     loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule)
   },
+  {
+    path: 'admin/access/entitlements',
+    loadChildren: () => import('./entitlements/entitlements.module').then(m => m.EntitlementsModule)
+  },
   { path: '**', component: EmptyRouteComponent },
 ];
 
