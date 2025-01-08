@@ -20,6 +20,12 @@ registerApplication({
 //   activeWhen: ["/"],
 // });
 
+registerApplication(
+  "ng-home",
+  () => System.import("ng-home"),
+  (location) => location.pathname.startsWith("/")
+);
+
 start({
   urlRerouteOnly: true,
 });

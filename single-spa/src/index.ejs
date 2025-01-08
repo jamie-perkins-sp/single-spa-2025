@@ -23,13 +23,15 @@
 
   <!-- Add your organization's prod import map URL to this script's src  -->
   <!-- <script type="injector-importmap" src="/importmap.json"></script> -->
+  
+  <!-- "@single-spa/welcome": "https://cdn.jsdelivr.net/npm/single-spa-welcome/dist/single-spa-welcome.min.js", -->
 
   <% if (isLocal) { %>
   <script type="injector-importmap">
     {
       "imports": {
         "@app/root-config": "//localhost:9000/app-root-config.js",
-        "@single-spa/welcome": "https://cdn.jsdelivr.net/npm/single-spa-welcome/dist/single-spa-welcome.min.js"
+        "ng-home": "//localhost:4300/main.js",
       }
     }
   </script>
