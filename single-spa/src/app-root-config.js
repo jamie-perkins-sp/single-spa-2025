@@ -16,6 +16,12 @@ registerApplication(
   (location) => location.pathname.startsWith("/")
 );
 
+registerApplication(
+  "standalone",
+  () => System.import("standalone"),
+  (location) => location.pathname.startsWith("/standalone")
+);
+
 start({
   urlRerouteOnly: true,
 });

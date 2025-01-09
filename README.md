@@ -1,17 +1,19 @@
 # Single-spa angular demo
 
-This is a single-spa with angular demo app. It contains 3 separate app shells and an angular app:
+This is a single-spa with 2 angular demo apps (including 1 standalone). It contains 3 separate app shells:
 
 - root-html-file: just an index.html file and package.json with a script to serve it
 - single-spa: app shell created with create-single-spa
 - single-spa-layout: app shell create with create-single-spa opting in to layout
-- ng-home: an angular 17 app
 
 There are 3 ways to run it, but before doing the following steps you will need to run `npm install` in each of the above folders.
 
-All 3 ways use the angular microfrontend, so first, run the angular app:
-1. `cd ng-home` 
-2. `npm run serve:single-spa` - serves at localhost:4300
+All 3 ways use the angular microfrontends, so first, run the angular apps:
+
+In both "ng-home" and "ng-standalone" folders, install deps and run:
+1. `npm run serve:single-spa` - serves at localhost:4300
+
+Known issue: app on standalone route fails to route on page refresh.
 
 ## Root html file ✅
 
