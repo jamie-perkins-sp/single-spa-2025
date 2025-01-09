@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EmptyRouteComponent } from './empty-route/empty-route.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: 'lazy',
     loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule)
@@ -16,7 +16,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot([])],
   exports: [RouterModule],
   providers: [{ provide: APP_BASE_HREF, useValue: '/' }]
 })
