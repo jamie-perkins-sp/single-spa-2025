@@ -9,14 +9,17 @@ module.exports = (webpackConfigEnv, argv) => {
     projectName: "root-config",
     webpackConfigEnv,
     argv,
-    disableHtmlGeneration: true,
+    disableHtmlGeneration: true
   });
 
-  return merge(defaultConfig, {
+  return merge({}, {
+    mode: 'development',
+    entry: './src/app-root-config',
     // modify the webpack config however you'd like to by adding to this object
     plugins: [
       new HtmlWebpackPlugin({
-        inject: false,
+        inject: true,
+        scriptLoading: 'module',
         template: "src/index.ejs",
         templateParameters: {
           isLocal: webpackConfigEnv && webpackConfigEnv.isLocal,
