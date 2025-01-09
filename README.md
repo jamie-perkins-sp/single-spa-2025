@@ -20,20 +20,21 @@ Uses a root html file taken from the [coexisting angular microfrontends](https:/
 1. In a separaate terminal, run `cd root-html-file` then `npm start`
 2. Open your browser to http://localhost:4200/
 
-## Single-spa ❌
+## Single-spa ✅
 
-Uses a shell created with `npx create-single-spa` _without_ layout. Currently not working.
+Uses a shell created with `npx create-single-spa` _without_ layout. 
 
 1. In a separate terminal, run `cd single-spa` then `npm start`
 2. Open your browser to http://localhost:9000/
 
-Currently fails with:
-
-> Error: application 'app1' died in status LOADING_SOURCE_CODE: Unable to resolve bare specifier 'app1'
+Required modifications from create-single-spa app:
+- add script tag for zone.js
+- add script tag for system-js and use system-js import map
+- add entry point in webpack config for local modules
 
 ## Single-spa layout ❌
 
-Uses a shell created with `npx create-single-spa` _opting in_to layout. Currently not working.
+Uses a shell created with `npx create-single-spa` _opting in_ to layout. Currently not working.
 
 1. In a separate terminal, run `cd single-spa-layout` then `npm start`
 2. Open your browser to http://localhost:9000/
